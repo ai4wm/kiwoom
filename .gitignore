@@ -1,0 +1,44 @@
+# Visual Studio files
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.sln.docstates
+*.pch
+*.ipch
+*.aps
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directories
+.vs/
+.vscode/
+
+# Visual Studio Code cache files
+*.vsidx
+*.tmp
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+ipch/
+
+# Visual Studio database files
+*.db
+*.idb
+*.pdb
+*.ilk
+
+# Build outputs
+*.exe
+*.dll
+
+# Claude settings
+.claude/
