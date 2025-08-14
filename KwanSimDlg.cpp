@@ -24,29 +24,29 @@
 const CString m_strRealSet = "주식시세;주식체결";
 
 // {조회 키,		리얼 키,	행, 열, 타입,			색 변경, 정렬, 앞 문자, 뒷 문자}
-const stGRID lstOPTKWFID[] = 
+const stGRID lstOPTKWFID[] =
 {
-	{"종목코드",		"-1",	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	"",	""}, 
-	{"종목명",			"-1",	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	"",	""}, 
-	{"현재가",			"0",	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""}, 
-	{"전일대비기호",	"10",	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	"",	""}, 
-	{"전일대비",		"1",	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""}, 
-	{"등락율",			"2",	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"}, 
-	{"거래량",			"5",	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	"",	""}, 
-	{"전일거래량대비",	"13",	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"}, 
+	{"종목코드",		"-1",	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	"",	""},
+	{"종목명",			"-1",	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	"",	""},
+	{"현재가",			"0",	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""},
+	{"전일대비기호",	"10",	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	"",	""},
+	{"전일대비",		"1",	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""},
+	{"등락율",			"2",	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"},
+	{"거래량",			"5",	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	"",	""},
+	{"전일거래량대비",	"13",	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"},
 };
 
 // 실시간 주문체결(현재가 표시용)
-const stGRID lstOPTKWFID_B[] = 
+const stGRID lstOPTKWFID_B[] =
 {
-	{"종목코드",		"-1",	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	"",	""}, 
-	{"종목명",			"-1",	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	"",	""}, 
-	{"현재가",			"1",	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""}, 
-	{"전일대비기호",	"12",	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	"",	""}, 
-	{"전일대비",		"2",	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""}, 
-	{"등락율",			"3",	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"}, 
-	{"거래량",			"7",	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	"",	""}, 
-	{"전일거래량대비",	"15",	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"}, 
+	{"종목코드",		"-1",	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	"",	""},
+	{"종목명",			"-1",	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	"",	""},
+	{"현재가",			"1",	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""},
+	{"전일대비기호",	"12",	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	"",	""},
+	{"전일대비",		"2",	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	""},
+	{"등락율",			"3",	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"},
+	{"거래량",			"7",	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	"",	""},
+	{"전일거래량대비",	"15",	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	"",	"%"},
 };
 
 // CKwanSimDlg 대화 상자
@@ -82,7 +82,7 @@ void CKwanSimDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CKwanSimDlg)
-	DDX_Control(pDX, IDC_GRD_KWANSIM,		m_grdKwanSim);
+	DDX_Control(pDX, IDC_GRD_KWANSIM, m_grdKwanSim);
 	//}}AFX_DATA_MAP
 }
 
@@ -93,10 +93,10 @@ BEGIN_MESSAGE_MAP(CKwanSimDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_CLOSE()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BTN_JONGADD,			OnBtnJongAdd)
-	ON_BN_CLICKED(IDC_BTN_JONGDELETE,		OnBtnJongDelete)
-	ON_BN_CLICKED(IDC_BTN_JONGALLDELETE,	OnBtnJongAllDelete)
-	ON_BN_CLICKED(IDC_BTN_SEARCH,			OnBtnSearch)
+	ON_BN_CLICKED(IDC_BTN_JONGADD, OnBtnJongAdd)
+	ON_BN_CLICKED(IDC_BTN_JONGDELETE, OnBtnJongDelete)
+	ON_BN_CLICKED(IDC_BTN_JONGALLDELETE, OnBtnJongAllDelete)
+	ON_BN_CLICKED(IDC_BTN_SEARCH, OnBtnSearch)
 END_MESSAGE_MAP()
 
 //*******************************************************************/
@@ -173,7 +173,7 @@ void CKwanSimDlg::OnClose()
 	if (m_pParent)
 	{
 		int nLen = m_strScrNo.GetLength();
-		char *cScrNo = new char[nLen + 1];
+		char* cScrNo = new char[nLen + 1];
 		memset(cScrNo, 0x00, nLen + 1);
 		memcpy(cScrNo, m_strScrNo, nLen);
 		m_pParent->PostMessage(UM_SCRENN_CLOSE, 0U, (LPARAM)cScrNo);
@@ -228,7 +228,7 @@ void CKwanSimDlg::OnBtnJongAdd()
 	}
 
 	CString strFileName = theApp.m_sAppPath + "/data/kwansim.ini";
-	int nCnt = ::GetPrivateProfileInt("JONG_CODE", "COUNT", 0,strFileName) + 1;
+	int nCnt = ::GetPrivateProfileInt("JONG_CODE", "COUNT", 0, strFileName) + 1;
 
 	// 종목코드 갯수 추가
 	strIndex.Format("%d", nCnt);
@@ -238,11 +238,31 @@ void CKwanSimDlg::OnBtnJongAdd()
 	::WritePrivateProfileString("JONG_CODE", strIndex, strCode, strFileName);
 	m_mapJongCode.SetAt(strCode, strIndex);
 
-	// 행 추가
-	m_grdKwanSim.InsertRow("", -1);
-	m_grdKwanSim.SetRowHeight(1, 20);		// 행의 높이 설정
-	m_grdKwanSim.SetItemFormat(lstOPTKWFID[nCnt].nRow, lstOPTKWFID[nCnt].nCol, lstOPTKWFID[nCnt].nAlign);
-	m_grdKwanSim.SetItemText(nCnt, 0, strCode);
+	// ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+	// 이 부분이 수정된 코드입니다.
+
+	// 행 추가: InsertRow의 반환 값을 반드시 newRow에 저장합니다.
+	int newRow = m_grdKwanSim.InsertRow("", -1); // <-- newRow 변수 추가
+
+	// 행 추가에 성공했는지 확인
+	if (newRow == -1) // 행 추가 실패 시
+	{
+		AfxMessageBox(_T("그리드에 종목을 추가하는 데 실패했습니다."));
+		return; // 함수 종료
+	}
+
+	// 새로 추가된 행(newRow)의 높이 설정 (하드코딩된 '1' 대신 'newRow' 사용)
+	m_grdKwanSim.SetRowHeight(newRow, 20);
+
+	// 새로 추가된 행(newRow)의 첫 번째 열(0)에 서식 및 텍스트 설정
+	// lstOPTKWFID 배열의 정의를 보니 0번 열은 "종목코드"이므로,
+	// 그에 맞는 서식(DT_LEFT)을 직접 지정하거나,
+	// lstOPTKWFID[0]의 서식 정보를 활용할 수 있습니다.
+	// 여기서는 lstOPTKWFID[0]의 정보를 사용하도록 수정합니다.
+	m_grdKwanSim.SetItemFormat(newRow, lstOPTKWFID[0].nCol, lstOPTKWFID[0].nAlign); // <-- lstOPTKWFID[0]의 정보 사용
+	m_grdKwanSim.SetItemText(newRow, 0, strCode); // <-- 'nCnt' 대신 'newRow' 사용
+
+	// ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 	// 종목 조회 요청
 	SendJongSearch(1, strCode, 5);
@@ -268,8 +288,8 @@ void CKwanSimDlg::OnBtnJongDelete()
 			return;
 		}
 		CString strTemp;
-		strTemp.Format("관심종목 [%s %s] 을 삭제 하겠습니까?", 
-			m_grdKwanSim.GetItemText(m_cellSelect.row, 0), 
+		strTemp.Format("관심종목 [%s %s] 을 삭제 하겠습니까?",
+			m_grdKwanSim.GetItemText(m_cellSelect.row, 0),
 			m_grdKwanSim.GetItemText(m_cellSelect.row, 1));
 		if (MessageBox(strTemp, "관심종목 삭제", MB_ICONQUESTION | MB_YESNO) == IDNO)
 		{
@@ -370,8 +390,8 @@ void CKwanSimDlg::InitKwanSimGrid()
 	m_grdKwanSim.SetColumnCount(8);
 
 	// 열의 넓이 설정
-	int i, nWidth[] = {50, 80, 80, 20, 60, 60, 80, 80};
-	CString strHeader[] = {"코드", "종목명", "현재가", "", "전일대비", "등락율", "거래량", "거래량대비"};
+	int i, nWidth[] = { 50, 80, 80, 20, 60, 60, 80, 80 };
+	CString strHeader[] = { "코드", "종목명", "현재가", "", "전일대비", "등락율", "거래량", "거래량대비" };
 	int nCnt = sizeof(nWidth) / sizeof(*nWidth);		// 전체크기 / 원소크기 = 원소개수
 	for (i = 0; i < nCnt; i++)
 	{
@@ -593,7 +613,7 @@ void CKwanSimDlg::OnReceiveChejanData(LPCTSTR sGubun, LONG nItemCnt, LPCTSTR sFi
 //! Create        : , 2014/06/02
 //! Comment       : 
 //******************************************************************/
-void CKwanSimDlg::SetDataKwanSimGrid(CStringArray &arrData, CString strRealType/* = ""*/)
+void CKwanSimDlg::SetDataKwanSimGrid(CStringArray& arrData, CString strRealType/* = ""*/)
 {
 	// 종목코드에 맞는 행 찾기
 	CString strData, strTemp;
