@@ -295,7 +295,7 @@ void CKhOpenApiTestDlg::OnBtnOrder()
 
 //*******************************************************************/
 //! Function Name : OnBtnKwanSim
-//! Function      : ???? ???
+//! Function      : 관심 버튼
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -344,9 +344,9 @@ void CKhOpenApiTestDlg::OnBtnTimeOff()
 }
 
 //*******************************************************************/
-//! Function Name : OnReceiveRealDataKhopenapictrl
-//! Function      : 실시간 처리
-//! Param         : LPCTSTR sJongmokCode, LPCTSTR sRealType, LPCTSTR sRealData
+//! Function Name : OnReceiveTrDataKhopenapictrl
+//! Function      : 조회 응답 처리
+//! Param         : LPCTSTR sScrNo, LPCTSTR sRQName, LPCTSTR sTrcode, LPCTSTR sRecordName, LPCTSTR sPrevNext, long nDataLength, LPCTSTR sErrorCode, LPCTSTR sMessage, LPCTSTR sSplmMsg
 //! Return        : void
 //! Create        : , 2014/06/02
 //! Comment       : 
@@ -399,9 +399,9 @@ void CKhOpenApiTestDlg::OnReceiveTrDataKhopenapictrl(LPCTSTR sScrNo, LPCTSTR sRQ
 }
 
 //*******************************************************************/
-//! Function Name : OnReceiveRealDataKhopenapictrl
-//! Function      : 실시간 처리
-//! Param         : LPCTSTR sJongmokCode, LPCTSTR sRealType, LPCTSTR sRealData
+//! Function Name : OnReceiveMsgKhopenapictrl
+//! Function      : 조회 에러 처리
+//! Param         : LPCTSTR sScrNo, LPCTSTR sRQName, LPCTSTR sTrCode, LPCTSTR sMsg
 //! Return        : void
 //! Create        : , 2014/06/02
 //! Comment       : 
@@ -463,7 +463,7 @@ void CKhOpenApiTestDlg::OnReceiveMsgKhopenapictrl(LPCTSTR sScrNo, LPCTSTR sRQNam
 
 //*******************************************************************/
 //! Function Name : OnReceiveRealDataKhopenapictrl
-//! Function      : ??��? ???
+//! Function      : 실시간 처리
 //! Param         : LPCTSTR sJongmokCode, LPCTSTR sRealType, LPCTSTR sRealData
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -517,7 +517,7 @@ void CKhOpenApiTestDlg::OnReceiveRealDataKhopenapictrl(LPCTSTR sJongmokCode, LPC
 	}
 
 	// 장운영 정보 처리
-	if (CString(sRealType) == ("Start time"))
+	if (!strcmp(sRealType, "장시작시간"))
 	{
 		int i;
 		CString strData[3], strMsg;
@@ -526,7 +526,7 @@ void CKhOpenApiTestDlg::OnReceiveRealDataKhopenapictrl(LPCTSTR sJongmokCode, LPC
 		{
 			strData[i] = theApp.m_khOpenApi.GetCommRealData(sJongmokCode, i);	strData[i].Trim();
 		}
-		strMsg.Format("장운영구분: %s\r\n시간 : %s\r\n예상잔여시간 : %s", strData[0], strData[1], strData[2]);
+		strMsg.Format("장운영구분 : %s\r\n시간 : %s\r\n예상잔여시간 : %s", strData[0], strData[1], strData[2]);
 
 		if (atoi(strData[2]) == 10)
 		{
@@ -634,8 +634,8 @@ void CKhOpenApiTestDlg::OnReceiveRealCondition(LPCTSTR strCode, LPCTSTR strType,
 //! Param				: LPCTSTR sScrNo					- 화면번호
 //!						: LPCTSTR strCodeList			- 종목리스트
 //!						: LPCTSTR strConditionName	- 조건명
-//!						: int nIndex								- 조건명인덱스
-//!						: int nNext								- 연속조회여부(2: 연속조회, 0:연속조회없음)
+//!						: int nIndex						- 조건명인덱스
+//!						: int nNext						- 연속조회여부(2: 연속조회, 0:연속조회없음)
 //! Return        : void
 //! Create        : , 2015/04/20
 //! Comment       : 
@@ -670,7 +670,7 @@ void CKhOpenApiTestDlg::OnReceiveTrCondition(LPCTSTR sScrNo, LPCTSTR strCodeList
 //*******************************************************************/
 //! Function Name	: OnReceiveConditionVer
 //! Function			: 사용자 조건식 응답
-//! Param				: BOOL bRet							- 성공(TRUE), 실패(FALSE)
+//! Param				: BOOL bRet						- 성공(TRUE), 실패(FALSE)
 //!						: LPCTSTR sMsg					- 메세지(reserved)
 //! Return        : void
 //! Create        : , 2015/04/20
@@ -784,7 +784,7 @@ void CKhOpenApiTestDlg::OnBnClickedBtnCurrentprice2()
 		return;
 
 	CString strRe = theApp.m_khOpenApi.GetMasterStockState(strTemp);
-	//AfxMessageBox(strRe);
+	AfxMessageBox(strRe);
 }
 
 void CKhOpenApiTestDlg::OnBnClickedBtnReal()

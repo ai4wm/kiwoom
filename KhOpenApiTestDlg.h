@@ -1,31 +1,31 @@
 //******************************************************************/
 //******************************************************************/
-//! All Rights Reserved. Copyright(c)   2014 (ÁÖ)ÇÑ±¹¼Ò¸®¸¶Ä¡        /
+//! All Rights Reserved. Copyright(c)   2014 (ï¿½ï¿½)ï¿½Ñ±ï¿½ï¿½Ò¸ï¿½ï¿½ï¿½Ä¡        /
 //******************************************************************/
 //! File Name     : KhOpenApiTestDlg.h
-//! Function      : Å°¿ò ¿ÀÇÂAPI Å×½ºÆ® ´ÙÀÌ¾ó·Î±×
-//! System Name   : Å°¿ò ¿ÀÇÂAPI Å×½ºÆ®
+//! Function      : Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½API ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½Ì¾ï¿½Î±ï¿½
+//! System Name   : Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½API ï¿½×½ï¿½Æ®
 //! Create        : , 2014/06/02
 //! Update        : 
 //! Comment       : 
 //******************************************************************/
-// KhOpenApiTestDlg.h : Çì´õ ÆÄÀÏ
+// KhOpenApiTestDlg.h : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 
 #pragma once
 
-// CKhOpenApiTestDlg ´ëÈ­ »óÀÚ
+// CKhOpenApiTestDlg ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
 class CKhOpenApiTestDlg : public CDialogEx
 {
-// »ý¼ºÀÔ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 public:
-	CKhOpenApiTestDlg(CWnd* pParent = NULL);	// Ç¥ÁØ »ý¼ºÀÚÀÔ´Ï´Ù.
+	CKhOpenApiTestDlg(CWnd* pParent = NULL);	// Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 
-// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
+// ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 	enum { IDD = IDD_KHOPENAPITEST_DLG };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV Áö¿øÀÔ´Ï´Ù.
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 
 public:
 	CMapStringToPtr m_mapScreen;
@@ -38,11 +38,11 @@ public:
 	CWnd *m_pRealAddDlg;
 protected:
 
-	// ±¸ÇöÀÔ´Ï´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 protected:
 	HICON m_hIcon;
 
-	// »ý¼ºµÈ ¸Þ½ÃÁö ¸Ê ÇÔ¼ö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 	afx_msg void OnDestroy();
@@ -51,6 +51,7 @@ protected:
 	afx_msg void OnBtnCurrentPrice();
 	afx_msg void OnBtnOrder();
 	afx_msg void OnBtnKwanSim();
+	afx_msg void OnBtnTimeOff();
 	afx_msg void OnBnClickedBtnCurrentprice2();
 	afx_msg void OnBnClickedBtnReal();
 	DECLARE_MESSAGE_MAP()
@@ -59,8 +60,8 @@ protected:
 	void OnReceiveMsgKhopenapictrl(LPCTSTR sScrNo, LPCTSTR sRQName, LPCTSTR sTrCode, LPCTSTR sMsg);
 	void OnReceiveChejanData(LPCTSTR sGubun, LONG nItemCnt, LPCTSTR sFidList);
 	void OnEventConnect(LONG nItemCnt);
-	void OnReceiveRealCondition(LPCTSTR strCode, LPCTSTR strType, LPCTSTR strConditionName, LPCTSTR strConditionIndex);			//Á¶°Ç°Ë»ö ½Ç½Ã°£ »ðÀÔ,»èÁ¦µÇ´Â Á¾¸ñÀ» ¹Þ´Â´Ù
-	void OnReceiveTrCondition(LPCTSTR sScrNo, LPCTSTR strCodeList, LPCTSTR strConditionName, int nIndex, int nNext);	//Á¶°Ç°Ë»ö Á¾¸ñ¸®½ºÆ®¸¦ ¹Þ´Â´Ù.
+	void OnReceiveRealCondition(LPCTSTR strCode, LPCTSTR strType, LPCTSTR strConditionName, LPCTSTR strConditionIndex);			//ï¿½ï¿½ï¿½Ç°Ë»ï¿½ ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Â´ï¿½
+	void OnReceiveTrCondition(LPCTSTR sScrNo, LPCTSTR strCodeList, LPCTSTR strConditionName, int nIndex, int nNext);	//ï¿½ï¿½ï¿½Ç°Ë»ï¿½ ï¿½ï¿½ï¿½ñ¸®½ï¿½Æ®ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
 	void OnReceiveConditionVer(long lRet, LPCTSTR sMsg);
 	DECLARE_EVENTSINK_MAP()
 public:
